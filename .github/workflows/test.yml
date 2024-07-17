@@ -9,7 +9,7 @@ jobs:
       steps:
         - name: checkout
           uses: actions/checkout@v4 # uses 사용할 라이브러리
-          
+
         - name: ssh ec2 접속
           uses: appleboy/ssh-action@v1.0.3
           with: 
@@ -19,4 +19,6 @@ jobs:
             port: ${{ secrets.PORT }}
             script: | # 실행할 스크립트
                 cd /home/ubuntu/myapp
+                git pull origin main
+                pm2 kill
                 npm start
