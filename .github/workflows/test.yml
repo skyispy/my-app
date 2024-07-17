@@ -16,7 +16,7 @@ jobs:
               node-version: '20'
 
         - name: checkout
-          uses: actions/checkout@v4  # uses : 사용할 라이브러리
+          uses: actions/checkout@4  # uses : 사용할 라이브러리
 
         - name: ssh key
           uses: webfactory/ssh-agent@v0.5.3
