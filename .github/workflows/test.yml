@@ -47,10 +47,6 @@ jobs:
         ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
         cat ~/.ssh/known_hosts
 
-    - name: debug artifacts
-      run: |
-        ls -la .dist
-
     - name: ec2 deploy
       uses: appleboy/ssh-action@v1.0.3
       with:
